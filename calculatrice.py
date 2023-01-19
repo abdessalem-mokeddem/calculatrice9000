@@ -18,7 +18,7 @@ def equalclick():
         formule = result
 
     except: 
-        equation.set(" error ") 
+        equation.set("Erreur") 
         formule = "" 
 
 def effacer(): 
@@ -28,7 +28,7 @@ def effacer():
 
 if __name__ == "__main__": 
     master = Tk() 
-    master.title("Calculatrice") 
+    master.title(" Ma Calculatrice") 
     master.geometry("375x315") 
 equation = StringVar() 
 formule_field = Entry(master, textvariable=equation) 
@@ -66,20 +66,20 @@ btn_0.grid(row=5, column=0)
 plus = Button(master, text=' + ', command=lambda: click("+"), height=2, width=10) 
 plus.grid(row=2, column=3) 
 
-minus = Button(master, text=' - ', command=lambda: click("-"), height=2, width=10) 
-minus.grid(row=3, column=3) 
+min = Button(master, text=' - ', command=lambda: click("-"), height=2, width=10) 
+min.grid(row=3, column=3) 
 
-multiply = Button(master, text=' * ', command=lambda: click("*"), height=2, width=10) 
-multiply.grid(row=4, column=3) 
+multiplier = Button(master, text=' * ', command=lambda: click("*"), height=2, width=10) 
+multiplier.grid(row=4, column=3) 
 
-divide = Button(master, text=' / ', command=lambda: click("/"), height=2, width=10) 
-divide.grid(row=5, column=3) 
+divise = Button(master, text=' / ', command=lambda: click("/"), height=2, width=10) 
+divise.grid(row=5, column=3) 
 
-equal = Button(master, text=' = ', command=equalclick, height=2, width=10) 
-equal.grid(row=5, column=2) 
+egal = Button(master, text=' = ', command=equalclick, height=2, width=10) 
+egal.grid(row=5, column=2) 
 
-effacer = Button(master, text='effacer', command=effacer, height=2, width=10) 
-effacer.grid(row=6, column='0') 
+Effacer = Button(master, text='Effacer', command=effacer, height=2, width=10) 
+Effacer.grid(row=6, column='0') 
 
 Decimal= Button(master, text='.', command=lambda: click('.'), height=2, width=10) 
 Decimal.grid(row=5, column=1) 
@@ -90,8 +90,8 @@ percent.grid(row=6, column=1)
 inverse= Button(master, text='√',height=2, width=10) 
 inverse.grid(row=6, column=2) 
 
-memo= Button(master, text='M', height=2, width=10) 
-memo.grid(row=6, column=3)     
+memory= Button(master, text='S', height=2, width=10) 
+memory.grid(row=6, column=3)     
 
 master.mainloop()
 
