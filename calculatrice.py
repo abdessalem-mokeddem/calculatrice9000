@@ -1,38 +1,27 @@
 from tkinter import *
 
-formule = "" 
-
 def click(num): 
 
     global formule 
     formule = formule + str(num) 
-    equation.set(formule) 
+    formule = (formule) 
 
 def equalclick(): 
-    try: 
-
-        global formule
-
-        result = str(eval(formule)) 
-        equation.set(result) 
-        formule = result
-
-    except: 
-        equation.set("Erreur") 
-        formule = "" 
+   
+   print("Erreur") 
+        
 
 def effacer(): 
     global formule 
     formule = "" 
-    equation.set("") 
-
+   
 if __name__ == "__main__": 
     master = Tk() 
     master.title(" Ma Calculatrice") 
     master.geometry("375x315") 
-equation = StringVar() 
-formule_field = Entry(master, textvariable=equation) 
-formule_field.grid(columnspan=4, pady= 30 , padx = 20 , ipadx = 100 , ipady = 10)
+    
+master(row =4, pady= 30 , padx = 20 , ipadx = 100 , ipady = 10)
+
 btn_7 = Button(master, text=' 7 ', command=lambda: click(7), height=2, width=10) 
 btn_7.grid(row=2, column=0) 
 
@@ -63,8 +52,8 @@ btn_3.grid(row=4, column=2)
 btn_0 = Button(master, text=' 0 ', command=lambda: click(0), height=2, width=10) 
 btn_0.grid(row=5, column=0) 
 
-plus = Button(master, text=' + ', command=lambda: click("+"), height=2, width=10) 
-plus.grid(row=2, column=3) 
+additionner = Button(master, text=' + ', command=lambda: click("+"), height=2, width=10) 
+additionner.grind(row=2, column=3) 
 
 min = Button(master, text=' - ', command=lambda: click("-"), height=2, width=10) 
 min.grid(row=3, column=3) 
@@ -75,24 +64,22 @@ multiplier.grid(row=4, column=3)
 divise = Button(master, text=' / ', command=lambda: click("/"), height=2, width=10) 
 divise.grid(row=5, column=3) 
 
-egal = Button(master, text=' = ', command=equalclick, height=2, width=10) 
-egal.grid(row=5, column=2) 
+egalite = Button(master, text=' = ', command=equalclick, height=2, width=10) 
+egalite.grid(row=5, column=2) 
 
 Effacer = Button(master, text='Effacer', command=effacer, height=2, width=10) 
 Effacer.grid(row=6, column='0') 
 
-Decimal= Button(master, text='.', command=lambda: click('.'), height=2, width=10) 
-Decimal.grid(row=5, column=1) 
+tiret= Button(master, text='.', command=lambda: click('.'), height=2, width=10) 
+tiret.grid(row=5, column=1) 
 
-percent= Button(master, text='%', command=lambda: click('%'), height=2, width=10) 
-percent.grid(row=6, column=1) 
+pourcentage= Button(master, text='%', command=lambda: click('%'), height=2, width=10) 
+pourcentage.grid(row=6, column=1) 
 
-inverse= Button(master, text='√',height=2, width=10) 
-inverse.grid(row=6, column=2) 
+racin= Button(master, text='√', command=lambda: click ('√'), height=2, width=10) 
+racin.grind(row=6, column=2) 
 
-memory= Button(master, text='S', height=2, width=10) 
-memory.grid(row=6, column=3)     
+buttonx= Button(master, text='x²',command=lambda: click ('x²') height=2, width=10) 
+buttonx.grid(row=6, column=3)     
 
 master.mainloop()
-
-
